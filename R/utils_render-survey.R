@@ -114,9 +114,11 @@ getRequired_internal <- function(questions) {
     stringsAsFactors = FALSE
   )
 
-  names(out) <- "required_id"
-
-  out <- out$required_id
+  ## NK 8/18/2021
+  if (NROW(out)) {
+    names(out) <- "required_id"
+    out <- out$required_id
+  }
 
   return(out)
 
